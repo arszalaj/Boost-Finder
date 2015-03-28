@@ -1,7 +1,7 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IWS Error Finder", "IWS Error Finder\IWS Error Finder.csproj", "{59B1CF59-F266-49AD-BC08-D765B6893EAB}"
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Boost Finder", "IWS Error Finder\Boost Finder.csproj", "{59B1CF59-F266-49AD-BC08-D765B6893EAB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

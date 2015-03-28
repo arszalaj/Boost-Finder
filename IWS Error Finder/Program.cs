@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace IwsErrorFinder
+namespace BoostFinder
 {
     static class Program
     {
@@ -15,7 +15,7 @@ namespace IwsErrorFinder
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new IwsErrorFinderForm());
+            Application.Run(new BoostFinderForm());
         }
     }
 }

@@ -8,13 +8,13 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace IwsErrorFinder
+namespace BoostFinder
 {
-    public partial class IwsErrorFinderForm : Form
+    public partial class BoostFinderForm : Form
     {
         Presenter presenter;
         string soundPath;
-        public IwsErrorFinderForm()
+        public BoostFinderForm()
         {
             InitializeComponent();
             presenter = new Presenter();
@@ -24,7 +24,7 @@ namespace IwsErrorFinder
         private void loadUrlButton_Click(object sender, EventArgs e)
         {
 
-            presenter.getFile(urlTextBox.Text, textBox1.Text, soundPath);
+            presenter.getFile(urlTextBox.Text, key1TextBox.Text, soundPath);
 
             /*
             var timer = new System.Threading.Timer((f) =>
@@ -38,7 +38,7 @@ namespace IwsErrorFinder
 
         private void turnOn()
         {
-            presenter.getFile(urlTextBox.Text, textBox1.Text, soundPath);
+            presenter.getFile(urlTextBox.Text, key1TextBox.Text, soundPath);
             //loadUrlButton.Enabled = false;
             //backgroundWorker1.RunWorkerAsync();
         }
@@ -58,12 +58,13 @@ namespace IwsErrorFinder
             loadUrlButton.Enabled = true;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void soundPathButton_Click(object sender, EventArgs e)
         {
             DialogResult result = openFileDialog1.ShowDialog();
             if (result == DialogResult.OK) // Test result.
             {
                 soundPath = openFileDialog1.FileName;
+                soundTextBox.Text = soundPath;
                 try
                 {
                     //string text = File.ReadAllText(file);

@@ -6,7 +6,7 @@ using System.Net;
 using System.IO;
 using System.Web;
 
-namespace IwsErrorFinder
+namespace BoostFinder
 {
     class Model
     {
@@ -33,7 +33,7 @@ namespace IwsErrorFinder
             {
                 if (!String.IsNullOrEmpty(url))
                 {
-                    errorContent += "Client side: " + Environment.NewLine + Environment.NewLine + getClientErrors(url) + Environment.NewLine;
+                    //errorContent += "Client side: " + Environment.NewLine + Environment.NewLine + findWords(url) + Environment.NewLine;
                 }
                 else
                 {
@@ -65,27 +65,24 @@ namespace IwsErrorFinder
             return result;
         }
 
-        public String getClientErrors(string url)
+        public void findWords(string url)
         {
             System.Net.WebClient webclient = new System.Net.WebClient();
             webclient.Credentials = new System.Net.NetworkCredential("arszalaj","haslo1haslo");
 
             var contents = webclient.DownloadString(url);
 
-            WebRequest req = HttpWebRequest.Create(url);
-            req.Method = "GET";
+            //WebRequest req = HttpWebRequest.Create(url);
+            //req.Method = "GET";
 
-            string source;
-            using (StreamReader reader = new StreamReader(req.GetResponse().GetResponseStream()))
-            {
-                source = reader.ReadToEnd();
-            }
+            //string source;
+            //using (StreamReader reader = new StreamReader(req.GetResponse().GetResponseStream()))
+            //{
+            //    source = reader.ReadToEnd();
+            //}
 
             lines = contents.Replace("\r", "").Split('\n');
 
-            string result = "", IwsErrors = "", GeneErrors ="";
-            int IwsErrorCounter = 0, GeneErrorCounter = 0;
-            isBuildSuccessful = false;
             for (int i = 0; i < lines.Length; i++)
             {
                 var line = lines[i];
@@ -98,10 +95,6 @@ namespace IwsErrorFinder
                     player.Play();
                 }
             }
-            result = " IWS errors: " + IwsErrorCounter.ToString() + Environment.NewLine + IwsErrors + Environment.NewLine +
-                        " Gene errors: " + GeneErrorCounter.ToString() + Environment.NewLine + GeneErrors + Environment.NewLine;
-            
-            return result;
         }
 
     }
