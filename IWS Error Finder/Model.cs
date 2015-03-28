@@ -16,29 +16,25 @@ namespace BoostFinder
         private string ClientLogsUrl;
         private string ServerLogsUrl;
         private string[] lines;
-        private string key;
+        public List<string> listOfKeys;
+        public List<string> alreadyFoundEntries = new List<string>();
         private string soundPath;
+        public int[] keyCounter;
 
         public Model()
         {
 
         }
 
-        public string getFile(string url, string key, string soundPath)
+        public string getFile(string url, List<string> listOfKeys, string soundPath)
         {
-            this.key = key;
+            this.listOfKeys = listOfKeys;
             this.soundPath = soundPath;
             var errorContent = "";
+            keyCounter = new int[4];
             try
             {
-                if (!String.IsNullOrEmpty(url))
-                {
-                    //errorContent += "Client side: " + Environment.NewLine + Environment.NewLine + findWords(url) + Environment.NewLine;
-                }
-                else
-                {
-                    errorContent = "Please enter a URL";
-                }
+                findWords(url);
             }
             catch (WebException ex)
             {
@@ -86,15 +82,49 @@ namespace BoostFinder
             for (int i = 0; i < lines.Length; i++)
             {
                 var line = lines[i];
-                if (line.Contains(key))
+                if (!AnyContainsAny(alreadyFoundEntries, line) && ContainsAny(line, listOfKeys))
                 {
-
-
                     System.Media.SoundPlayer player = new System.Media.SoundPlayer(soundPath);
                     //System.Media.SoundPlayer player = new System.Media.SoundPlayer("http://www.tailspintoys.com/sounds/stop.wav");
                     player.Play();
+                    alreadyFoundEntries.Add(line);
                 }
             }
+
+        }
+
+        public bool ContainsAny(string value, List<string> keys)
+        {
+            foreach (string key in keys)
+            {
+                if (!string.IsNullOrEmpty(key))
+                {
+                    if (value.ToLower().Contains(key.ToLower()))
+                    {
+                        keyCounter[keys.IndexOf(key)]++;
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+        }
+
+        public bool AnyContainsAny(List<string> alreadyFoundEntries, string line)
+        {
+            foreach (string entry in alreadyFoundEntries)
+                {
+                    if (!string.IsNullOrEmpty(line))
+                    {
+                        if (entry.ToLower().Equals(line.ToLower()))
+                        {
+                            //keyCounter[listOfKeys.IndexOf(entry)]--;
+                            return true;
+                        }
+                    }
+                }
+
+            return false;
         }
 
     }

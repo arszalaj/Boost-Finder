@@ -36,11 +36,15 @@
             this.chooseSoundButton = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.soundTextBox = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.soundLabel = new System.Windows.Forms.Label();
+            this.keyWordsLabel = new System.Windows.Forms.Label();
             this.key4TextBox = new System.Windows.Forms.TextBox();
             this.key3TextBox = new System.Windows.Forms.TextBox();
             this.key2TextBox = new System.Windows.Forms.TextBox();
+            this.key1Label = new System.Windows.Forms.Label();
+            this.key2Label = new System.Windows.Forms.Label();
+            this.key3Label = new System.Windows.Forms.Label();
+            this.key4Label = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // loadUrlButton
@@ -111,23 +115,23 @@
             this.soundTextBox.Size = new System.Drawing.Size(335, 20);
             this.soundTextBox.TabIndex = 5;
             // 
-            // label1
+            // soundLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 51);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 15);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Sound:";
+            this.soundLabel.AutoSize = true;
+            this.soundLabel.Location = new System.Drawing.Point(9, 51);
+            this.soundLabel.Name = "soundLabel";
+            this.soundLabel.Size = new System.Drawing.Size(46, 15);
+            this.soundLabel.TabIndex = 6;
+            this.soundLabel.Text = "Sound:";
             // 
-            // label2
+            // keyWordsLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 100);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 15);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Key words:";
+            this.keyWordsLabel.AutoSize = true;
+            this.keyWordsLabel.Location = new System.Drawing.Point(12, 100);
+            this.keyWordsLabel.Name = "keyWordsLabel";
+            this.keyWordsLabel.Size = new System.Drawing.Size(66, 15);
+            this.keyWordsLabel.TabIndex = 7;
+            this.keyWordsLabel.Text = "Key words:";
             // 
             // key4TextBox
             // 
@@ -157,16 +161,52 @@
             this.key2TextBox.Size = new System.Drawing.Size(335, 20);
             this.key2TextBox.TabIndex = 10;
             // 
+            // key1Label
+            // 
+            this.key1Label.AutoSize = true;
+            this.key1Label.Location = new System.Drawing.Point(353, 118);
+            this.key1Label.Name = "key1Label";
+            this.key1Label.Size = new System.Drawing.Size(0, 15);
+            this.key1Label.TabIndex = 11;
+            // 
+            // key2Label
+            // 
+            this.key2Label.AutoSize = true;
+            this.key2Label.Location = new System.Drawing.Point(353, 149);
+            this.key2Label.Name = "key2Label";
+            this.key2Label.Size = new System.Drawing.Size(0, 15);
+            this.key2Label.TabIndex = 12;
+            // 
+            // key3Label
+            // 
+            this.key3Label.AutoSize = true;
+            this.key3Label.Location = new System.Drawing.Point(353, 175);
+            this.key3Label.Name = "key3Label";
+            this.key3Label.Size = new System.Drawing.Size(0, 15);
+            this.key3Label.TabIndex = 13;
+            // 
+            // key4Label
+            // 
+            this.key4Label.AutoSize = true;
+            this.key4Label.Location = new System.Drawing.Point(353, 201);
+            this.key4Label.Name = "key4Label";
+            this.key4Label.Size = new System.Drawing.Size(0, 15);
+            this.key4Label.TabIndex = 14;
+            // 
             // BoostFinderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(437, 243);
+            this.Controls.Add(this.key1Label);
+            this.Controls.Add(this.key2Label);
+            this.Controls.Add(this.key3Label);
+            this.Controls.Add(this.key4Label);
             this.Controls.Add(this.key2TextBox);
             this.Controls.Add(this.key3TextBox);
             this.Controls.Add(this.key4TextBox);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.keyWordsLabel);
+            this.Controls.Add(this.soundLabel);
             this.Controls.Add(this.soundTextBox);
             this.Controls.Add(this.chooseSoundButton);
             this.Controls.Add(this.key1TextBox);
@@ -190,11 +230,15 @@
         private System.Windows.Forms.Button chooseSoundButton;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.TextBox soundTextBox;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label soundLabel;
+        private System.Windows.Forms.Label keyWordsLabel;
         private System.Windows.Forms.TextBox key4TextBox;
         private System.Windows.Forms.TextBox key3TextBox;
         private System.Windows.Forms.TextBox key2TextBox;
+        private System.Windows.Forms.Label key1Label;
+        private System.Windows.Forms.Label key2Label;
+        private System.Windows.Forms.Label key3Label;
+        private System.Windows.Forms.Label key4Label;
     }
 }
 
